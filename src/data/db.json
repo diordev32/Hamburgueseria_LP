@@ -1,0 +1,123 @@
+{
+    "menu": {
+
+        "hamburguesas": [
+            {
+                "id": 1,
+                "name": "Hamburguesa Clásica",
+                "description": "Carne de res, queso cheddar, lechuga, tomate, cebolla y mayonesa especial",
+                "price": 500
+            },
+            {
+                "id": 2,
+                "name": "Hamburguesa BBQ",
+                "description": "Carne de res, bacon, cebolla caramelizada, queso cheddar y salsa barbacoa",
+                "price": 600
+            },
+            {
+                "id": 3,
+                "name": "Hamburguesa Doble",
+                "description": "Doble hamburguesa, doble cheddar, cebolla caramelizada y salsa BBQ",
+                "price": 700
+            },
+            {
+                "id": 4,
+                "name": "Hamburguesa Picante",
+                "description": "Carne de res, jalapeños frescos, queso cheddar, cebolla morada y salsa picante casera",
+                "price": 650
+            },
+            {
+                "id": 5,
+                "name": "Hamburguesa Gourmet",
+                "description": "Carne de res, queso azul, cebolla caramelizada, rúcula y mayonesa trufada",
+                "price": 750
+            },
+            {
+                "id": 6,
+                "name": "Hamburguesa Tex-Mex",
+                "description": "Carne de res, guacamole, cebolla morada, jalapeños, queso cheddar y salsa ranch",
+                "price": 700
+            },
+            {
+                "id": 7,
+                "name": "Hamburguesa Frita",
+                "description": "Carne de res, huevo frito, bacon crujiente, queso cheddar y salsa de mostaza y miel",
+                "price": 700
+            }
+        ]
+        },
+
+        "extras":
+        {
+            "Menú de papas":
+            [
+                {
+                    "id": 8,
+                    "name": "Papas Clásicas",
+                    "description": "Papas fritas crujientes, saladas y doradas",
+                    "price": 200
+                },
+                {
+                    "id": 9,
+                    "name": "Papas con Cheddar y Panceta Ahumada",
+                    "description": "Papas fritas cubiertas con queso cheddar derretido y panceta ahumada crujiente",
+                    "price": 250
+                }
+                ,
+                {
+                    "id": 10,
+                    "name": "Nuggets de Pollo",
+                    "description": "Nuggets de pollo empanados y fritos",
+                    "price": 250
+                }
+            ],
+
+            "Menú de salsas de autor":
+            [
+                {
+                    "id": 11,
+                    "name": "Salsa BBQ Casera",
+                    "description": "Salsa BBQ casera con un toque de ahumado",
+                    "price": 50
+                },
+                {
+                    "id": 12,
+                    "name": "Salsa BBQ Picante",
+                    "description": "Salsa BBQ casera con un toque picante",
+                    "price": 50
+                },
+                {
+                    "id": 13,
+                    "name": "Salsa de Mostaza y Miel",
+                    "description": "Salsa de mostaza y miel con un toque de acidez",
+                    "price": 50
+                },
+                {
+                    "id": 14,
+                    "name": "Mayonesa de Ajo",
+                    "description": "Mayonesa casera con ajo y perejil",
+                    "price": 50
+                },
+                {
+                    "id": 15,
+                    "name": "Salsa de Queso Cheddar",
+                    "description": "Salsa de queso cheddar con un toque de pimienta",
+                    "price": 50
+                },
+                {
+                    "id": 16,
+                    "name": "Salsa Tártara Casera",
+                    "description": "Salsa tártara casera con pepinillos y alcaparras",
+                    "price": 50
+                },
+                {
+                    "id": 17,
+                    "name": "Salsa de Pimiento Asado",
+                    "description": "Salsa de pimiento asado con un toque de ajo",
+                    "price": 50
+                }
+            ]
+        }
+        
+}
+
