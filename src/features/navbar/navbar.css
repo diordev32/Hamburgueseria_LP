@@ -1,0 +1,56 @@
+.navbar
+{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background-color: black;
+    padding: 10px 0;
+    color: white;
+    
+}
+
+
+.navbar-container
+{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+    align-items: center;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo
+{
+    grid-column: span 3;
+    display:flex;
+    justify-content: flex-start;
+}
+
+
+.nav-links {
+    grid-column: span 9 ;
+    display: flex;
+    justify-content: flex-end;
+    gap: 25px;
+}
+
+.nav-links li
+{
+    list-style: none;
+}
+
+.nav-links a
+{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px 15px;
+}
+
+.nav-links a:hover
+{
+    color:rgb(255, 251, 0);
+}
