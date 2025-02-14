@@ -15,8 +15,8 @@
 
 
 ## 🚀 **Estado del Proyecto**  
-📌 **Fase actual:** Planificación y documentación.  
-📌 **Próximos pasos:** Desarrollo del frontend y configuración del flujo de trabajo en Git.  
+📌 **Fase actual:** Fase 3: Desarrollo  
+📌 **Próximos pasos:** Desarrollar los componentes principales (React)  
 
 ---
 
@@ -154,11 +154,16 @@ Para más detalles, consulta el 📄 [WDD completo](/docs/WDD%20-%20El%20Rincón
 
 
 ___
-## 📂 **Estructura Inicial del Proyecto**  
+## 📂 **Estructura de Carpetas**  
+
+Decidí utilizar una estructura basada en features para este proyecto.
+
 
 ```txt
 /Hamburguesa_LP
-│── docs/                # Documentación del proyecto  
-│── README.md            # Este archivo  
-│── .gitignore           # Archivos ignorados por Git  
-│── src/                 # Código fuente (a definir)  
+│── docs/                # Documentación del proyecto   
+│── src/                 # Código fuente (a definir) 
+│    │── assets/         # Recursos
+│           │── images/  # Imagenes del sitio
+│── data/                # Base de datos (archivo Json)
+│── feature/             # En esta carpeta estará cada feature con su carpeta propia
