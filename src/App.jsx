@@ -5,16 +5,12 @@ import HeroSection from "./features/heroSection/heroSection.jsx"
 function App() {
   return (
     <>
-    <header className="container">
-      <Navbar />
-      
-    </header>
 
-    <section className="container">
+      <section>
 
-      <HeroSection />
+        <HeroSection />
 
-    </section>
+      </section>
     </>
     )
     }
