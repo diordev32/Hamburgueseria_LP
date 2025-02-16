@@ -1,0 +1,30 @@
+.testimonial-card
+{
+    display: flex;
+
+    flex-direction: column;
+    background-color: #fff;
+
+    max-width: 281px;
+    max-height: 329px;
+
+    padding: 20px;
+
+    border: 1px solid  black;
+}
+
+.testimonial-image
+{
+    width: 80px;
+    height: 80px;
+}
+
+.testimonial-content
+{
+    align-self: center;
+}
+
+.testimonial-author
+{
+    align-self: center;
+}
