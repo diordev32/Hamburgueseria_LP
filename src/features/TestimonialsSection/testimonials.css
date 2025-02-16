@@ -1,0 +1,24 @@
+.testimonial-title
+{
+    display: flex;
+
+    color: white;
+
+    padding:30px;
+
+    justify-content: center;
+
+    font-size: 32px;
+}
+
+.testimonials
+{
+    max-height:700px
+}
+
+.testimonials-cards
+{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
