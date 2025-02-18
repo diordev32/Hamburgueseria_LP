@@ -1,5 +1,7 @@
 import BurgerCard  from "./burgerCard.jsx";
+import GarnishCard from "./garnishCard.jsx";
 import React from "react";
+
 
 import "./menu.css";
 
@@ -12,7 +14,9 @@ function Menu()
 
             <h1 className="title">Menú</h1>
 
-            <div className="menu">
+            <h2 className="title">Hamburguesas</h2>
+
+            <div className="burger-menu">
 
                 <BurgerCard />
                 <BurgerCard />
@@ -24,6 +28,21 @@ function Menu()
                 <BurgerCard />
                 <BurgerCard />  
             </div>
+
+
+            <div>
+                <h2 className="title">Papas</h2>
+                <div className="garnish-menu">
+                    <GarnishCard />
+                    <GarnishCard />
+                    <GarnishCard />
+                    
+                </div>
+
+            </div>
+
+
+
         </div>
     );
 }
