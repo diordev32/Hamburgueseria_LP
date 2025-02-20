@@ -6,7 +6,7 @@ function BurgerCard ()
         
         <div className="burger-card">
 
-            <img src="https://dummyimage.com/200x200/e0e0e0/000000.png&text=X" alt="burger" />
+            <img className="burger-image" src="https://dummyimage.com/200x200/e0e0e0/000000.png&text=X" alt="burger" />
 
             <h4 className="burger-name">Name</h4>
 
