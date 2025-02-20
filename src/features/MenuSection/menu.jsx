@@ -1,5 +1,8 @@
 import BurgerCard  from "./burgerCard.jsx";
 import GarnishCard from "./garnishCard.jsx";
+import DipCard from "./dipsCards.jsx";
+
+
 import React from "react";
 
 
@@ -31,17 +34,29 @@ function Menu()
 
 
             <div>
-                <h2 className="title">Papas</h2>
+                <h2 className="title">Guarnición</h2>
                 <div className="garnish-menu">
                     <GarnishCard />
                     <GarnishCard />
-                    <GarnishCard />
-                    
+                    <GarnishCard />  
                 </div>
 
             </div>
 
+            <h2 className="title">Salsas de autor</h2>
 
+            <div className="dips-menu">
+
+                <DipCard />
+                <DipCard />
+                <DipCard />
+
+                <DipCard />
+                <DipCard />
+                <DipCard />
+
+                <DipCard />  
+            </div>
 
         </div>
     );
