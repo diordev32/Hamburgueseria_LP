@@ -1,0 +1,41 @@
+.garnish-card
+{
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    border: 1px solid black;
+
+    background-color: white;
+
+    min-width: 200px;
+
+    min-height: 250px;
+
+    max-width: 250px;
+
+    max-height: 300px;
+}
+
+.garnish-name,
+.garnish-description,
+.garnish-price
+{
+    margin: 0;
+    padding: 5px;
+    text-align: center;
+}
+
+.garnish-image
+{
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    padding-bottom: 10px;
+    min-width: 180px;
+    min-height: 100px;
+    
+}
+
