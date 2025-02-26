@@ -16,7 +16,7 @@
 
 ## 🚀 **Estado del Proyecto**  
 📌 **Fase actual:** Fase 3: Desarrollo  
-📌 **Próximos pasos:** Desarrollar los componentes principales (React)  
+📌 **Próximos pasos:** Implementar las funcionalidades del front-end (formulario, navegación, etc..)  
 
 ---
 
@@ -83,6 +83,7 @@ El objetivo principal es ofrecer una experiencia intuitiva y accesible, mantenie
 - Integración con Mercado Pago
 - Implementar seguridad básica (validación de entrada)
 - Implementar el estilo al sitio web (colores, imágenes, tipografía, etc…)
+- Optimización y refactorización del código
 
 
 🔹 **Fase 4 - Pruebas**
