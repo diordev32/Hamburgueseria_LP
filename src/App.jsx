@@ -1,4 +1,4 @@
-import Navbar from "./features/navbar/navbar"
+import Navbar from "./features/navbar/navbar.jsx"
 import HeroSection from "./features/heroSection/heroSection.jsx"
 import Testimonials from "./features/testimonialsSection/testimonials.jsx"
 import Menu from "./features/menuSection/menu.jsx"
@@ -15,9 +15,9 @@ function App() {
         <HeroSection/>
       </section>
 
-      <section>
-        <Navbar/>
-      </section>
+
+      <Navbar clasName= "navbar"/>
+
 
       <section>
         <Testimonials/>

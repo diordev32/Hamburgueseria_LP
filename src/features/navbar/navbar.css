@@ -1,30 +1,27 @@
 .navbar
 {
-    position: sticky;
-    top: 0;
+
     z-index: 1000;
     width: 100%;
     background-color: black;
     padding: 10px 0;
     color: white;
-    
+    min-height: 80px;
+    height: auto;
 }
 
 
 .navbar-container
 {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 20px;
     align-items: center;
     max-width: 1440px;
+
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0px;
 }
 
 .logo
 {
-    grid-column: span 3;
     display:flex;
     justify-content: flex-start;
 }

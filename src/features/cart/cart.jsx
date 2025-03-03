@@ -1,9 +1,9 @@
 import "./cart.css";
 
-function Cart() 
+function Cart()
 {
     return (
-        <div className="Cart">
+        <div id="Carrito" className="Cart ">
             <h2 className="title">Carrito</h2>
 
             <h3 className="subtitle">Tu resumen de compra</h3>
@@ -28,7 +28,7 @@ function Cart()
             </div>
 
         </div>
-    );    
+    );
 }
 
 

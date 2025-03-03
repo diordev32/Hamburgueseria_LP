@@ -3,7 +3,7 @@ import "./checkoutForm.css";
 function CheckoutForm()
 {
     return (
-        <div className="checkout-form">
+        <div id="Compra" className="checkout-form">
 
             <h2>Formulario </h2>
 
@@ -26,7 +26,7 @@ function CheckoutForm()
 
                 <div>
                 <label className="input-box">
-                   <p> Dirección de entrega:</p>
+                    <p> Dirección de entrega:</p>
                     <input   className="input-bar" type="text" />
                 </label>
                 </div>

@@ -10,10 +10,10 @@ import "./menu.css";
 
 
 
-function Menu() 
+function Menu()
 {
     return (
-        <div className="menu-section container">
+        <div id="Menu" className="menu-section container">
 
             <h1 className="title">Menú</h1>
 
@@ -29,7 +29,7 @@ function Menu()
                 <BurgerCard />
                 <BurgerCard />
                 <BurgerCard />
-                <BurgerCard />  
+                <BurgerCard />
             </div>
 
 
@@ -38,7 +38,7 @@ function Menu()
                 <div className="garnish-menu">
                     <GarnishCard />
                     <GarnishCard />
-                    <GarnishCard />  
+                    <GarnishCard />
                 </div>
 
             </div>
@@ -55,7 +55,7 @@ function Menu()
                 <DipCard />
                 <DipCard />
 
-                <DipCard />  
+                <DipCard />
             </div>
 
         </div>
