@@ -1,17 +1,18 @@
 import BurgerCard  from "./burgerCard.jsx";
 import GarnishCard from "./garnishCard.jsx";
 import DipCard from "./dipsCards.jsx";
+import ProductListContext from "./productList.jsx";
 
 
-import React from "react";
-
+import {useContext} from "react";
 
 import "./menu.css";
 
 
-
 function Menu()
 {
+    const {burgerList, garnishList, dipList} = useContext(ProductListContext);
+
     return (
         <div id="Menu" className="menu-section container">
 
@@ -21,24 +22,19 @@ function Menu()
 
             <div className="burger-menu">
 
-                <BurgerCard />
-                <BurgerCard />
-                <BurgerCard />
-                <BurgerCard />
+                {burgerList.map((burger, index) => (
+                    <BurgerCard key={index} name={burger.name} description={burger.description} price={burger.price}/>
+                ))}
 
-                <BurgerCard />
-                <BurgerCard />
-                <BurgerCard />
-                <BurgerCard />
             </div>
-
 
             <div>
                 <h2 className="title">Guarnición</h2>
                 <div className="garnish-menu">
-                    <GarnishCard />
-                    <GarnishCard />
-                    <GarnishCard />
+
+                    {garnishList.map((garnish, index) => (
+                        <GarnishCard key={index} name={garnish.name} description={garnish.description} price={garnish.price}/>
+                    ))}
                 </div>
 
             </div>
@@ -47,20 +43,14 @@ function Menu()
 
             <div className="dips-menu">
 
-                <DipCard />
-                <DipCard />
-                <DipCard />
+                {dipList.map((dip, index) => (
+                    <DipCard key={index} name={dip.name} description={dip.description} price={dip.price}/>
+                ))}
 
-                <DipCard />
-                <DipCard />
-                <DipCard />
-
-                <DipCard />
             </div>
 
         </div>
     );
 }
-
 
 export default Menu;

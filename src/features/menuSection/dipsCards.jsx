@@ -1,16 +1,18 @@
 import "./dipsCards.css";
 
 
-function DipCard()
+function DipCard({name, price,description, img="https://dummyimage.com/150x120/e0e0e0/000000.png&text=X"})
 {
     return (
-         <div className="dip-card">
+        <div className="dip-card">
 
-            <img className="dips-image" src="https://dummyimage.com/150x120/e0e0e0/000000.png&text=X" alt="dip" />
+            <img className="dips-image" src={img} alt="dip" />
 
-            <h4 className="dip-name">Name</h4>
+            <h4 className="dip-name">{name}</h4>
 
-            <h5 className="dip-price">Precio</h5>
+            <p className="dip-description">{description}</p>
+
+            <h5 className="dip-price">{price}</h5>
 
         </div>
     )

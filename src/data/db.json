@@ -43,81 +43,88 @@
                 "name": "Hamburguesa Frita",
                 "description": "Carne de res, huevo frito, bacon crujiente, queso cheddar y salsa de mostaza y miel",
                 "price": 700
+            },
+
+            {
+                "id": 8,
+                "name": "Hamburguesa de Pollo",
+                "description": "Carne de pollo, lechuga, tomate, cebolla morada, queso cheddar, salsa de mostaza, miel y un toque de jalapeño",
+                "price": 450
             }
         ]
         },
 
         "extras":
         {
-            "Menú de papas":
+            "Guarniciones":
             [
                 {
-                    "id": 8,
+                    "id": 9,
                     "name": "Papas Clásicas",
                     "description": "Papas fritas crujientes, saladas y doradas",
                     "price": 200
                 },
                 {
-                    "id": 9,
+                    "id": 10,
                     "name": "Papas con Cheddar y Panceta Ahumada",
                     "description": "Papas fritas cubiertas con queso cheddar derretido y panceta ahumada crujiente",
                     "price": 250
                 }
                 ,
                 {
-                    "id": 10,
+                    "id": 11,
                     "name": "Nuggets de Pollo",
                     "description": "Nuggets de pollo empanados y fritos",
                     "price": 250
                 }
             ],
 
-            "Menú de salsas de autor":
+            "Salsas":
             [
                 {
-                    "id": 11,
-                    "name": "Salsa BBQ Casera",
+                    "id": 12,
+                    "name": "Salsa BBQ",
                     "description": "Salsa BBQ casera con un toque de ahumado",
                     "price": 50
                 },
                 {
-                    "id": 12,
+                    "id": 13,
                     "name": "Salsa BBQ Picante",
                     "description": "Salsa BBQ casera con un toque picante",
                     "price": 50
                 },
                 {
-                    "id": 13,
+                    "id": 14,
                     "name": "Salsa de Mostaza y Miel",
                     "description": "Salsa de mostaza y miel con un toque de acidez",
                     "price": 50
                 },
                 {
-                    "id": 14,
+                    "id": 15,
                     "name": "Mayonesa de Ajo",
                     "description": "Mayonesa casera con ajo y perejil",
                     "price": 50
                 },
                 {
-                    "id": 15,
+                    "id": 16,
                     "name": "Salsa de Queso Cheddar",
                     "description": "Salsa de queso cheddar con un toque de pimienta",
                     "price": 50
                 },
                 {
-                    "id": 16,
-                    "name": "Salsa Tártara Casera",
+                    "id": 17,
+                    "name": "Salsa Tártara",
                     "description": "Salsa tártara casera con pepinillos y alcaparras",
                     "price": 50
                 },
                 {
-                    "id": 17,
+                    "id": 18,
                     "name": "Salsa de Pimiento Asado",
                     "description": "Salsa de pimiento asado con un toque de ajo",
                     "price": 50
                 }
             ]
         }
-        
+
 }
 

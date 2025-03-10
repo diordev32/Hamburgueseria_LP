@@ -1,21 +1,35 @@
+import CartContext from "../cart/cartContext.jsx";
+
+import {useContext, useEffect} from "react";
+
 import "./burgerCard.css";
 
-function BurgerCard ()
+function BurgerCard ({name, description, price, image= "https://dummyimage.com/200x200/e0e0e0/000000.png&text=X"})
 {
+
+    const {addItem,cartItems} = useContext(CartContext);
+
+    function clickHandler()
+    {
+        addItem({name, price});
+    }
+
+
     return(
-        
+
         <div className="burger-card">
 
-            <img className="burger-image" src="https://dummyimage.com/200x200/e0e0e0/000000.png&text=X" alt="burger" />
+            <img className="burger-image" src={image} alt="burger"/>
 
-            <h4 className="burger-name">Name</h4>
+            <h4 className="burger-name">{name} </h4>
 
-            <p className="burger-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque autem magnam quae laudantium.</p>
+            <p className="burger-description">{description}</p>
 
-            <h5 className="burger-price">Precio</h5>
+            <h5 className="burger-price">{price}</h5>
+
+            <button onClick={clickHandler} className="btn">Agregar al carrito</button>
 
         </div>
-        
     )
 }
 
