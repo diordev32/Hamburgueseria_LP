@@ -19,14 +19,18 @@ function Cart()
                         cartItems.map((item, index) => (
                             <li key={index}>
                                 <h4>{item.name}</h4>
-                                <h5>{item.price}</h5>
+                                <h5>${item.price}</h5>
                             </li>
                         ))
                     }
                 </ul>
             </div>
 
-            <h3 className="total">Total: $ 1000</h3>
+            <h3 className="total">
+
+                ${cartItems.reduce((acc, item) => acc + item.price, 0)}
+
+            </h3>
 
             <div className="cart-buttons">
 

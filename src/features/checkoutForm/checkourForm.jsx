@@ -1,44 +1,84 @@
 import "./checkoutForm.css";
 
+import {useState} from "react";
+
+
 function CheckoutForm()
 {
+
+    const [err, setError] = useState(
+        {
+            name: "",
+            phone: "",
+            address: "",
+            payment: ""
+        }
+    );
+
+    function handleSumit(event)
+    {
+        event.preventDefault();
+
+        console.log("Formulario enviado");
+    }
+
+    function handleNameChange(event)
+    {
+
+        console.log(typeof(event.target.value))
+        if (event.target.value === "")
+        {
+            setError(prevErrors => ({...prevErrors, name: 'El campo no puede estar vacío'}));
+            event.target.style.border = "4px solid red";
+
+        }
+        else
+        {
+            setError(prevErrors => ({...prevErrors, name: ''}));
+            event.target.style.border = "4px solid green";
+        }
+    }
+
     return (
         <div id="Compra" className="checkout-form">
 
             <h2>Formulario </h2>
 
-            <form>
+            <form onSubmit={handleSumit}>
+                <fieldset>
+                    <legend>Informaciónde Contacto</legend>
 
-                <div>
+                <label htmlFor="name" className="input-box"> Nombre: </label>
+
+                <input onBlur={handleNameChange} id="name" className="input-bar" type="text" />
+                <p>
+                {err.name}
+                </p>
+
                 <label className="input-box">
-                    <p>Nombre:</p>
-
-                    <input  className="input-bar" type="text" />
-                </label>
-                </div>
-
-                <div>
-                <label className="input-box">
-                    <p>Email:</p>
+                    <p>Teléfono:</p>
                     <input  className="input-bar" type="email" />
                 </label>
-                </div>
 
-                <div>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>Información de Envío</legend>
                 <label className="input-box">
                     <p> Dirección de entrega:</p>
                     <input   className="input-bar" type="text" />
                 </label>
-                </div>
+                </fieldset>
 
-                <div>
+                <fieldset>
+                    <legend>Información de Pago</legend>
                 <label className="input-box" >
                     <p>Método de pago:</p>
                     <input  className="input-bar" type="text" />
                 </label>
-                </div>
-
-                <button type="submit">Buy</button>
+                </fieldset>r
+                <button type="submit">Confirmar</button>
 
             </form>
         </div>
