@@ -25,7 +25,9 @@ function CheckoutForm()
     function handleNameChange(event)
     {
 
-        console.log(typeof(event.target.value))
+    const regex = /^(?:[A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ]+)(?:[ '-][A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ]+)+$/;
+
+
         if (event.target.value === "")
         {
             setError(prevErrors => ({...prevErrors, name: 'El campo no puede estar vacío'}));
@@ -50,7 +52,7 @@ function CheckoutForm()
 
                 <label htmlFor="name" className="input-box"> Nombre: </label>
 
-                <input onBlur={handleNameChange} id="name" className="input-bar" type="text" />
+                <input onBlur={handleNameChange} id="name" className="input-bar" type="text" placeholder="Nombre Apellido" />
                 <p>
                 {err.name}
                 </p>
@@ -60,15 +62,6 @@ function CheckoutForm()
                     <input  className="input-bar" type="email" />
                 </label>
 
-
-                </fieldset>
-
-                <fieldset>
-                    <legend>Información de Envío</legend>
-                <label className="input-box">
-                    <p> Dirección de entrega:</p>
-                    <input   className="input-bar" type="text" />
-                </label>
                 </fieldset>
 
                 <fieldset>
@@ -77,7 +70,7 @@ function CheckoutForm()
                     <p>Método de pago:</p>
                     <input  className="input-bar" type="text" />
                 </label>
-                </fieldset>r
+                </fieldset>
                 <button type="submit">Confirmar</button>
 
             </form>
