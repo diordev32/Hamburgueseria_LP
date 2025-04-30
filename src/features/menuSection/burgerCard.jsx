@@ -1,6 +1,6 @@
 import CartContext from "../cart/cartContext.jsx";
 
-import {useContext, useEffect} from "react";
+import {useContext} from "react";
 
 import "./burgerCard.css";
 
