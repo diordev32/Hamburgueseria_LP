@@ -1,4 +1,11 @@
-body 
+/*
+
+{
+    outline: 1px solid red;
+} */
+
+
+body
 {
     background-color: #212121;
     margin: 0;
@@ -15,5 +22,11 @@ body
 
 .title
 {
-    font-family: 'Poppins', sans-serif;
+}
+
+.navbar
+{
+    position: sticky;
+    top: 0;
+    z-index:2000;
 }

@@ -1,24 +1,35 @@
 import "./cart.css";
+import React, { use, useContext, useEffect } from "react";
+import CartContext from "./cartContext.jsx";
 
-function Cart() 
+function Cart()
 {
+    const { cartItems } = useContext(CartContext);
+
     return (
-        <div className="Cart">
+        <div id="Carrito" className="Cart ">
             <h2 className="title">Carrito</h2>
 
             <h3 className="subtitle">Tu resumen de compra</h3>
 
             <div className="cart-items">
                 <ul>
-                    <li>Producto 1</li>
-                    <li>Producto 2</li>
-                    <li>Producto 3</li>
-                    <li>Producto 4</li>
-                    <li>Producto 5</li>
+                    {
+                        cartItems.map((item, index) => (
+                            <li key={index}>
+                                <h4>{item.name}</h4>
+                                <h5>${item.price}</h5>
+                            </li>
+                        ))
+                    }
                 </ul>
             </div>
 
-            <h3 className="total">Total: $ 1000</h3>
+            <h3 className="total">
+
+                ${cartItems.reduce((acc, item) => acc + item.price, 0)}
+
+            </h3>
 
             <div className="cart-buttons">
 
@@ -28,8 +39,7 @@ function Cart()
             </div>
 
         </div>
-    );    
+    );
 }
-
 
 export default Cart;

@@ -1,19 +1,17 @@
 import BurgerCard  from "./burgerCard.jsx";
 import GarnishCard from "./garnishCard.jsx";
 import DipCard from "./dipsCards.jsx";
-
-
-import React from "react";
-
+import ProductListContext from "./productList.jsx";
+import {useContext} from "react";
 
 import "./menu.css";
 
-
-
-function Menu() 
+function Menu()
 {
+    const {burgerList, garnishList, dipList} = useContext(ProductListContext);
+
     return (
-        <div className="menu-section container">
+        <div id="Menu" className="menu-section container">
 
             <h1 className="title">Menú</h1>
 
@@ -21,24 +19,19 @@ function Menu()
 
             <div className="burger-menu">
 
-                <BurgerCard />
-                <BurgerCard />
-                <BurgerCard />
-                <BurgerCard />
+                {burgerList.map((burger, index) => (
+                    <BurgerCard key={index} name={burger.name} description={burger.description} price={burger.price}/>
+                ))}
 
-                <BurgerCard />
-                <BurgerCard />
-                <BurgerCard />
-                <BurgerCard />  
             </div>
-
 
             <div>
                 <h2 className="title">Guarnición</h2>
                 <div className="garnish-menu">
-                    <GarnishCard />
-                    <GarnishCard />
-                    <GarnishCard />  
+
+                    {garnishList.map((garnish, index) => (
+                        <GarnishCard key={index} name={garnish.name} description={garnish.description} price={garnish.price}/>
+                    ))}
                 </div>
 
             </div>
@@ -47,20 +40,12 @@ function Menu()
 
             <div className="dips-menu">
 
-                <DipCard />
-                <DipCard />
-                <DipCard />
-
-                <DipCard />
-                <DipCard />
-                <DipCard />
-
-                <DipCard />  
+                {dipList.map((dip, index) => (
+                    <DipCard key={index} name={dip.name} description={dip.description} price={dip.price}/>
+                ))}
             </div>
 
         </div>
     );
 }
-
-
 export default Menu;

@@ -1,10 +1,10 @@
 import "./heroSection.css";
 
-function HeroSection() 
+function HeroSection()
 {
     return (
-        
-            <div className="hero-background">
+
+            <div id="Inicio" className="hero-background">
 
                 <div className="container hero-content">
 
@@ -17,9 +17,9 @@ function HeroSection()
                             <h2> 100% Carne, 100% para vos </h2>
                         </div>
 
-                        <div className="hero-btn"> 
+                        <div className="hero-btn">
                             <button>
-                                !Hacé tu pedido ya!
+                                <a href="#Menu">Ver menú</a>
                             </button>
                         </div>
                     </div>
@@ -27,7 +27,7 @@ function HeroSection()
                     <img src="./src/assets/images/heroHamburguesa.png" alt="Hamburguesa deliciosa" className="hero-image"/>
                 </div>
             </div>
-    );     
+    );
 }
 
 export default HeroSection;

@@ -1,34 +1,36 @@
-import Navbar from "./features/navbar/navbar"
-import HeroSection from "./features/heroSection/heroSection.jsx"
-import Testimonials from "./features/testimonialsSection/testimonials.jsx"
-import Menu from "./features/menuSection/menu.jsx"
-import Cart from "./features/cart/cart.jsx"
-import CheckoutForm from "./features/checkoutForm/checkourForm.jsx"
-import Footer from "./features/footer/footer.jsx"
-
+import Navbar from "./features/navbar/navbar.jsx";
+import HeroSection from "./features/heroSection/heroSection.jsx";
+import Testimonials from "./features/testimonialsSection/testimonials.jsx";
+import Menu from "./features/menuSection/menu.jsx";
+import Cart from "./features/cart/cart.jsx";
+import CheckoutForm from "./features/checkoutForm/checkourForm.jsx";
+import Footer from "./features/footer/footer.jsx";
+import { ProductListProvider } from "./features/menuSection/productList.jsx";
+import {CartProvider} from "./features/cart/cartContext.jsx";
 
 function App() {
   return (
     <>
 
+      <CartProvider>
+
       <section>
         <HeroSection/>
       </section>
 
-      <section>
-        <Navbar/>
-      </section>
+      <Navbar className= "navbar"/>
 
       <section>
         <Testimonials/>
       </section>
 
       <section>
-        <Menu/>
+        <ProductListProvider>
+            <Menu/>
+        </ProductListProvider>
       </section>
-
       <section>
-        <Cart/>
+          <Cart/>
       </section>
 
       <section>
@@ -38,8 +40,7 @@ function App() {
       <section>
         <Footer/>
       </section>
-
-
+        </CartProvider>
     </>
     )
     }
