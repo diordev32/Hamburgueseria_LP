@@ -15,7 +15,7 @@
 
 ## Estado del Proyecto
 📌 **Fase actual:** Fase 3: Desarrollo
-📌 **Próximos pasos:** Aprender TailwindCss y aplicarlo en el proyecto
+📌 **Próximos pasos:** Aprender TailwindCSS y aplicarlo en el proyecto
 
 ---
 
@@ -37,9 +37,9 @@ El objetivo principal es ofrecer una experiencia intuitiva y accesible, mantenie
 
 ## Tecnologías
 
-🔹 **Frontend:** HTML, TailwindCss, React, Vite.
+🔹 **Frontend:** HTML, TailwindCSS, React, Vite.
 
-🔹 **Backend:** Simulación con Json Server.
+🔹 **Backend:** A definir.
 
 🔹 **Pasarela de pago:** Mercado Pago API.
 
@@ -78,7 +78,7 @@ El objetivo principal es ofrecer una experiencia intuitiva y accesible, mantenie
 - Configurar el entorno de desarrollo (Repositorio, herramientas, etc…)
 - Desarrollar los componentes principales (React)
 - Implementar las funcionalidades del front-end (formulario, navegación, etc..)
-- Desarrollar la lógica del back end (Json Server) y el carrito de compras
+- Desarrollar la lógica del back-end y el carrito de compras
 - Implementar seguridad básica (validación de entrada)
 - Implementar el estilo al sitio web (colores, imágenes, tipografía, etc…)
 - Integración con Mercado Pago
