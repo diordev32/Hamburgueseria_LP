@@ -1,5 +1,5 @@
-# **El Rincón de la Hamburguesa 🍔**  
-**E-commerce para pedidos de hamburguesas con integración de pagos simulados.**  
+# **El Rincón de la Hamburguesa 🍔**
+**E-commerce para pedidos de hamburguesas con integración de pagos simulados.**
 
 ## Tabla de Contenido
 - [Estado del Proyecto](#estado-del-proyecto)
@@ -13,36 +13,35 @@
 
 
 
-
-## 🚀 **Estado del Proyecto**  
-📌 **Fase actual:** Fase 3: Desarrollo  
-📌 **Próximos pasos:** Implementar las funcionalidades del front-end (formulario, navegación, etc..)  
-
----
-
-## 📖 **Descripción**  
-*"El Rincón de la Hamburguesa"* será un e-commerce básico donde los clientes podrán ver el menú, seleccionar productos y realizar pedidos de manera rápida y sencilla.  
-
-El objetivo principal es ofrecer una experiencia intuitiva y accesible, manteniendo un diseño atractivo y optimizado.  
+## Estado del Proyecto
+📌 **Fase actual:** Fase 3: Desarrollo
+📌 **Próximos pasos:** Aprender TailwindCss y aplicarlo en el proyecto
 
 ---
 
-## 🎯 **Objetivos del Proyecto**  
+## Descripción
+*"El Rincón de la Hamburguesa"* será un e-commerce básico donde los clientes podrán ver el menú, seleccionar productos y realizar pedidos de manera rápida y sencilla.
 
-- Crear una **interfaz simple** y **rápida** para realizar pedidos.  
-- Implementar un **sistema de carrito** con opción para modificar cantidades antes de confirmar la compra.  
-- Integrar **pagos simulados con Mercado Pago** para facilitar las transacciones.  
-- Diseñar una **experiencia visual atractiva** basada en el branding del negocio.  
+El objetivo principal es ofrecer una experiencia intuitiva y accesible, manteniendo un diseño atractivo y optimizado.
 
 ---
 
-## 🛠️ **Tecnologías**  
+## Objetivos del Proyecto
 
-🔹 **Frontend:** HTML, CSS, React, Vite.  
+- Crear una **interfaz simple** y **rápida** para realizar pedidos.
+- Implementar un **sistema de carrito** con opción para modificar cantidades antes de confirmar la compra.
+- Integrar **pagos simulados con Mercado Pago** para facilitar las transacciones.
+- Diseñar una **experiencia visual atractiva** basada en el branding del negocio.
 
-🔹 **Backend:** Simulación con Json Server.  
+---
 
-🔹 **Pasarela de pago:** Mercado Pago API. 
+## Tecnologías
+
+🔹 **Frontend:** HTML, TailwindCss, React, Vite.
+
+🔹 **Backend:** Simulación con Json Server.
+
+🔹 **Pasarela de pago:** Mercado Pago API.
 
 🔹 **Diseño:** Figma (wireframes), Excalidraw (diagramas).
 
@@ -51,9 +50,9 @@ El objetivo principal es ofrecer una experiencia intuitiva y accesible, mantenie
 
 ---
 
-## 🗺️ **Cronograma de Trabajo**  
+## Cronograma de Trabajo
 
-🔹 **Fase 1 - Planificación**  
+🔹 **Fase 1 - Planificación**
 
 - Definir el propósito y objetivos del sitio web
 - Establecer el público objetivo
@@ -80,9 +79,9 @@ El objetivo principal es ofrecer una experiencia intuitiva y accesible, mantenie
 - Desarrollar los componentes principales (React)
 - Implementar las funcionalidades del front-end (formulario, navegación, etc..)
 - Desarrollar la lógica del back end (Json Server) y el carrito de compras
-- Integración con Mercado Pago
 - Implementar seguridad básica (validación de entrada)
 - Implementar el estilo al sitio web (colores, imágenes, tipografía, etc…)
+- Integración con Mercado Pago
 - Optimización y refactorización del código
 
 
@@ -116,54 +115,54 @@ El objetivo principal es ofrecer una experiencia intuitiva y accesible, mantenie
 
 ---
 
-## 🚀 **Flujo de Trabajo con Ramas**  
+## Flujo de Trabajo con Ramas
 
-El desarrollo seguirá una estructura basada en **GitFlow**:  
+El desarrollo seguirá una estructura basada en **GitFlow**:
 
-- **main** → Versión estable y en producción.  
-- **develop** → Desarrollo activo.  
-- **feature*** → Ramas para nuevas funcionalidades.  
-- **hotfix*** → Correcciones urgentes.  
+- **main** → Versión estable y en producción.
+- **develop** → Desarrollo activo.
+- **feature*** → Ramas para nuevas funcionalidades.
+- **hotfix*** → Correcciones urgentes.
 
 ```txt
-│── main                    # Versión estable en producción  
-    │── develop             # Desarrollo activo  
+│── main                    # Versión estable en producción
+    │── develop             # Desarrollo activo
         │── feature         # Funcionalidades nuevas
-        │── hotfix          # Corecciones urgentes 
+        │── hotfix          # Corecciones urgentes
 
 ```
 
-## 📜 Documentación  
+## Documentación
 
-Este proyecto sigue un **Web Design Document (WDD)** que define su estructura, diseño y funcionalidades.  
+Este proyecto sigue un **Web Design Document (WDD)** que define su estructura, diseño y funcionalidades.
 
-Resumen del WDD:  
-- **Objetivo:** Crear un e-commerce de hamburguesas con una experiencia rápida y amigable.  
-- **Público objetivo:** Familias, trabajadores y jóvenes.  
-- **Funcionalidades clave:**  
-  - Catálogo de hamburguesas y extras.  
-  - Pedido rápido con pop-up para modificar el carrito.  
-  - Integración con Mercado Pago.  
-  - Sección de testimonios (gestionada manualmente).  
-- **Diseño:**  
-  - Estilo cálido y cercano.  
-  - Colores principales: rojo, amarillo, negro y blanco.  
-  - Tipografías: Oswald/Poppins para títulos, Roboto/Open Sans para texto.  
+Resumen del WDD:
+- **Objetivo:** Crear un e-commerce de hamburguesas con una experiencia rápida y amigable.
+- **Público objetivo:** Familias, trabajadores y jóvenes.
+- **Funcionalidades clave:**
+  - Catálogo de hamburguesas y extras.
+  - Pedido rápido con pop-up para modificar el carrito.
+  - Integración con Mercado Pago.
+  - Sección de testimonios (gestionada manualmente).
+- **Diseño:**
+  - Estilo cálido y cercano.
+  - Colores principales: rojo, amarillo, negro y blanco.
+  - Tipografías: Oswald/Poppins para títulos, Roboto/Open Sans para texto.
 
 Para más detalles, consulta el 📄 [WDD completo](/docs/WDD%20-%20El%20Rincón%20de%20la%20hamburguesa%20.pdf).
 
 
 
 ___
-## 📂 **Estructura de Carpetas**  
+## 📂 **Estructura de Carpetas**
 
 Decidí utilizar una estructura basada en features para este proyecto.
 
 
 ```txt
 /Hamburguesa_LP
-│── docs/                # Documentación del proyecto   
-│── src/                 # Código fuente (a definir) 
+│── docs/                # Documentación del proyecto
+│── src/                 # Código fuente (a definir)
 │    │── assets/         # Recursos
 │           │── images/  # Imagenes del sitio
 │── data/                # Base de datos (archivo Json)
