@@ -1,4 +1,3 @@
-import "./footer.css";
 import GoogleMap from "./googleMap";
 import WhatsAppIcon from "../../assets/images/whatsappIcon.svg";
 import InstagramIcon from "../../assets/images/instagramIcon.svg";
@@ -9,9 +8,9 @@ function Footer()
 {
     return (
 
-        <div className="footer container">
+        <div>
 
-            <div className="direction">
+            <div>
                 <h3>Nos podes encontrar en</h3>
 
                 <p> <b>Dirección:</b> Av. Mitre y Castelli, Campana</p>
@@ -19,7 +18,7 @@ function Footer()
 
             </div>
 
-            <div className="contact">
+            <div>
 
                 <h3>Contacto</h3>
 
@@ -31,7 +30,7 @@ function Footer()
                 </a>
             </div>
 
-            <div className="social">
+            <div>
                 <h3>Redes Sociales</h3>
 
                 <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
@@ -48,7 +47,7 @@ function Footer()
 
             </div>
 
-            <div className="opening-hours">
+            <div>
 
                 <h3>Horarios de Atención</h3>
                 <p> <b>Lunes a Jueves:</b> 12:00 a 14:00 - 20:00 a 22:00 </p>

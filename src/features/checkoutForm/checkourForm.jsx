@@ -1,6 +1,4 @@
-import "./checkoutForm.css";
 import {useState,useEffect} from "react";
-
 
 function CheckoutForm()
 {
@@ -78,7 +76,7 @@ function CheckoutForm()
     ,[err]);
 
     return (
-        <div id="Compra" className="checkout-form">
+        <div id="Compra">
 
             <h2>Formulario </h2>
 
@@ -86,16 +84,16 @@ function CheckoutForm()
                 <fieldset>
                     <legend>Informaciónde Contacto</legend>
 
-                <label htmlFor="name" className="input-box"> Nombre: </label>
+                <label htmlFor="name"> Nombre: </label>
 
-                <input onBlur={handleNameChange} id="name" className="input-bar" type="text" placeholder="Nombre Apellido" />
+                <input onBlur={handleNameChange} id="name" type="text" placeholder="Nombre Apellido" />
                 <p>
                 {err.name}
                 </p>
 
                 <label className="input-box">
                     <p>Teléfono:</p>
-                    <input  onBlur={handlePhoneChange} className="input-bar" placeholder="Ej: 011560599" type="email" />
+                    <input  onBlur={handlePhoneChange} placeholder="Ej: 011560599" type="email" />
                     <p>
                         {err.phone}
                     </p>
@@ -107,9 +105,9 @@ function CheckoutForm()
                 <fieldset>
                     <legend>Información de Pago</legend>
 
-                <label className="input-box" >
+                <label>
                     <p>Método de pago:</p>
-                    <input  className="input-bar" type="text" />
+                    <input type="text" />
                 </label>
                 </fieldset>
                 <button type="submit">Confirmar</button>

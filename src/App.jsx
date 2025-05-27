@@ -1,4 +1,4 @@
-import Navbar from "./features/navbar/navbar.jsx";
+import NavBar from "./features/navbar/navbar.jsx";
 import HeroSection from "./features/heroSection/heroSection.jsx";
 import Testimonials from "./features/testimonialsSection/testimonials.jsx";
 import Menu from "./features/menuSection/menu.jsx";
@@ -8,40 +8,15 @@ import Footer from "./features/footer/footer.jsx";
 import { ProductListProvider } from "./features/menuSection/productList.jsx";
 import {CartProvider} from "./features/cart/cartContext.jsx";
 
+
 function App() {
   return (
-    <>
+    <div>
 
-      <CartProvider>
+    <NavBar/>
 
-      <section>
-        <HeroSection/>
-      </section>
-
-      <Navbar className= "navbar"/>
-
-      <section>
-        <Testimonials/>
-      </section>
-
-      <section>
-        <ProductListProvider>
-            <Menu/>
-        </ProductListProvider>
-      </section>
-      <section>
-          <Cart/>
-      </section>
-
-      <section>
-        <CheckoutForm/>
-      </section>
-
-      <section>
-        <Footer/>
-      </section>
-        </CartProvider>
-    </>
+    </div>
     )
     }
+
 export default App

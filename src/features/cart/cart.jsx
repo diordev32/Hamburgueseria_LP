@@ -1,5 +1,4 @@
-import "./cart.css";
-import React, { use, useContext, useEffect } from "react";
+import React, {useContext} from "react";
 import CartContext from "./cartContext.jsx";
 
 function Cart()
@@ -7,12 +6,12 @@ function Cart()
     const { cartItems } = useContext(CartContext);
 
     return (
-        <div id="Carrito" className="Cart ">
-            <h2 className="title">Carrito</h2>
+        <div id="Carrito">
+            <h2>Carrito</h2>
 
-            <h3 className="subtitle">Tu resumen de compra</h3>
+            <h3>Tu resumen de compra</h3>
 
-            <div className="cart-items">
+            <div>
                 <ul>
                     {
                         cartItems.map((item, index) => (
@@ -25,16 +24,16 @@ function Cart()
                 </ul>
             </div>
 
-            <h3 className="total">
+            <h3>
 
                 ${cartItems.reduce((acc, item) => acc + item.price, 0)}
 
             </h3>
 
-            <div className="cart-buttons">
+            <div>
 
-                <button className="btn">Confirmar</button>
-                <button className="btn">Cancelar</button>
+                <button>Confirmar</button>
+                <button>Cancelar</button>
 
             </div>
 

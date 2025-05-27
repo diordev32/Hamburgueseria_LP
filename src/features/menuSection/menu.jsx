@@ -4,20 +4,18 @@ import DipCard from "./dipsCards.jsx";
 import ProductListContext from "./productList.jsx";
 import {useContext} from "react";
 
-import "./menu.css";
-
 function Menu()
 {
     const {burgerList, garnishList, dipList} = useContext(ProductListContext);
 
     return (
-        <div id="Menu" className="menu-section container">
+        <div id="Menu">
 
-            <h1 className="title">Menú</h1>
+            <h1>Menú</h1>
 
-            <h2 className="title">Hamburguesas</h2>
+            <h2>Hamburguesas</h2>
 
-            <div className="burger-menu">
+            <div>
 
                 {burgerList.map((burger, index) => (
                     <BurgerCard key={index} name={burger.name} description={burger.description} price={burger.price}/>
@@ -26,8 +24,8 @@ function Menu()
             </div>
 
             <div>
-                <h2 className="title">Guarnición</h2>
-                <div className="garnish-menu">
+                <h2>Guarnición</h2>
+                <div>
 
                     {garnishList.map((garnish, index) => (
                         <GarnishCard key={index} name={garnish.name} description={garnish.description} price={garnish.price}/>
@@ -36,9 +34,9 @@ function Menu()
 
             </div>
 
-            <h2 className="title">Salsas de autor</h2>
+            <h2>Salsas de autor</h2>
 
-            <div className="dips-menu">
+            <div>
 
                 {dipList.map((dip, index) => (
                     <DipCard key={index} name={dip.name} description={dip.description} price={dip.price}/>

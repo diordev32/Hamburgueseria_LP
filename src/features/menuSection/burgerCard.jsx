@@ -2,8 +2,6 @@ import CartContext from "../cart/cartContext.jsx";
 
 import {useContext} from "react";
 
-import "./burgerCard.css";
-
 function BurgerCard ({name, description, price, image= "https://dummyimage.com/200x200/e0e0e0/000000.png&text=X"})
 {
 
@@ -16,17 +14,17 @@ function BurgerCard ({name, description, price, image= "https://dummyimage.com/2
 
     return(
 
-        <div className="burger-card">
+        <div>
 
-            <img className="burger-image" src={image} alt="burger"/>
+            <img src={image} alt="burger"/>
 
-            <h4 className="burger-name">{name} </h4>
+            <h4>{name} </h4>
 
-            <p className="burger-description">{description}</p>
+            <p>{description}</p>
 
-            <h5 className="burger-price">{price}</h5>
+            <h5>{price}</h5>
 
-            <button onClick={clickHandler} className="btn">Agregar al carrito</button>
+            <button onClick={clickHandler}>Agregar al carrito</button>
 
         </div>
     )
