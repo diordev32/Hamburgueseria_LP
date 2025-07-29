@@ -8,15 +8,13 @@ import Footer from "./features/footer/footer.jsx";
 import { ProductListProvider } from "./features/menuSection/productList.jsx";
 import {CartProvider} from "./features/cart/cartContext.jsx";
 
-
 function App() {
   return (
-    <div>
-
-    <NavBar/>
-
+    <div className="font-Roboto text-white bg-neutral-950">
+      <NavBar/>
+      <HeroSection/>
+      <Testimonials/>
     </div>
-    )
-    }
+    )};
 
-export default App
+export default App;

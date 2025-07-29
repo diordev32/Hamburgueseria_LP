@@ -1,1 +1,31 @@
 @import "tailwindcss";
+
+
+    @font-face {
+        font-family: "Oswald";
+        src: url('../src/assets/fonts/Oswald-VariableFont_wght.ttf') format('truetype-variations');
+        font-weight: 200 700;
+        font-style: normal;
+        font-display: swap;
+        }
+
+        @font-face {
+            font-family: "Roboto";
+            src: url('../src/assets/fonts/Roboto-Italic-VariableFont_wdth,wght.ttf') format('truetype-variations');
+            font-weight: 100 900;
+            font-style: italic;
+            font-display: swap;
+            }
+
+            @font-face {
+                font-family: "Roboto";
+                src: url('../src/assets/fonts/Roboto-VariableFont_wdth,wght.ttf') format('truetype-variations');
+                font-weight: 100 900;
+                font-style: normal;
+                font-display: swap;
+                }
+
+    @theme {
+        --font-Title: "Oswald", sans-serif;
+        --font-Text: "Roboto", sans-serif;
+    }
