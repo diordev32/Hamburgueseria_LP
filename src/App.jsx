@@ -7,13 +7,21 @@ import CheckoutForm from "./features/checkoutForm/checkourForm.jsx";
 import Footer from "./features/footer/footer.jsx";
 import { ProductListProvider } from "./features/menuSection/productList.jsx";
 import {CartProvider} from "./features/cart/cartContext.jsx";
+import Container from "./features/components/container.jsx";
 
 function App() {
   return (
     <div className="font-Roboto text-white bg-neutral-950">
       <NavBar/>
       <HeroSection/>
-      <Testimonials/>
+      <Container>
+        <Testimonials/>
+        <ProductListProvider>
+          <CartProvider>
+          <Menu/>
+          </CartProvider>
+        </ProductListProvider>
+      </Container>
     </div>
     )};
 

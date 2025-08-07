@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
     @font-face {
         font-family: "Oswald";
         src: url('../src/assets/fonts/Oswald-VariableFont_wght.ttf') format('truetype-variations');
@@ -28,4 +27,6 @@
     @theme {
         --font-Title: "Oswald", sans-serif;
         --font-Text: "Roboto", sans-serif;
+        --color-mustard: #FBC02D;
+        --color-red: #D32F2F
     }

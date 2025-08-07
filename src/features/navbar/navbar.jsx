@@ -21,7 +21,7 @@ function Navbar() {
               key={link.path}>
                 <a
                   href={link.path}
-                  className="hover:text-gray-900 px-4 py-2 hover:bg-[#FBC02D] transition-colors duration-300 rounded-lg "
+                  className="hover:text-gray-900 px-4 py-2 hover:bg-mustard transition-colors duration-300 rounded-lg "
                 >
                   {link.label}
                 </a>
