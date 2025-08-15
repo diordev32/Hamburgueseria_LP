@@ -19,6 +19,7 @@ function App() {
         <ProductListProvider>
           <CartProvider>
           <Menu/>
+          <Cart/>
           </CartProvider>
         </ProductListProvider>
       </Container>

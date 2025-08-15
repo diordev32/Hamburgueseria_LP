@@ -2,14 +2,14 @@ import CartContext from "../cart/cartContext.jsx";
 
 import {useContext} from "react";
 
-function ProductCard ({name, description, price, image= "https://dummyimage.com/200x200/e0e0e0/000000.png&text=X",altCaption="Imagen del producto", bgimage})
+function ProductCard ({productid, name, description, price, image= "https://dummyimage.com/200x200/e0e0e0/000000.png&text=X",altCaption="Imagen del producto"})
 {
 
     const {addItem,cartItems} = useContext(CartContext);
 
     function clickHandler()
     {
-        addItem({name, price});
+        addItem({productid,name, price, image, description, altCaption});
     }
 
     return(

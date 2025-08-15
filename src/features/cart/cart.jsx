@@ -16,7 +16,9 @@ function Cart()
                     {
                         cartItems.map((item, index) => (
                             <li key={index}>
+                                <h4>{item.id}</h4>
                                 <h4>{item.name}</h4>
+                                <h4></h4>
                                 <h5>${item.price}</h5>
                             </li>
                         ))

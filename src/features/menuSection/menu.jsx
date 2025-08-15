@@ -2,7 +2,6 @@ import ProductCard  from "./productCard.jsx";
 import ProductListContext from "./productList.jsx";
 import {useContext} from "react";
 import hamNegra from './hamb-negra.png';
-import hamVacia from './hamb-vacia.png';
 
 function Menu()
 {
@@ -22,8 +21,8 @@ function Menu()
 
             <div className={'flex flex-wrap justify-center gap-6'}>
 
-                {burgerList.map((burger, index) => (
-                    <ProductCard key={index} name={burger.name} description={burger.description} price={burger.price} altCaption={burger.name} bgimage={hamNegra}/>
+                {burgerList.map((burger) => (
+                    <ProductCard key={burger.id} productid={burger.id} name={burger.name} description={burger.description} price={burger.price} altCaption={burger.name} bgimage={hamNegra}/>
                 ))}
             </div>
 
@@ -34,8 +33,8 @@ function Menu()
 
             <div className="flex flex-wrap justify-center gap-6">
 
-                {garnishList.map((garnish, index) => (
-                    <ProductCard key={index} name={garnish.name} description={garnish.description} price={garnish.price} altCaption={garnish.name}/>
+                {garnishList.map((garnish) => (
+                    <ProductCard key={garnish.id} productid={garnish.id} name={garnish.name} description={garnish.description} price={garnish.price} altCaption={garnish.name}/>
                     ))}
                 </div>
 
@@ -45,8 +44,8 @@ function Menu()
             </h2>
 
             <div className="flex flex-wrap justify-center gap-6">
-                {dipList.map((dip, index) => (
-                    <ProductCard key={index} name={dip.name} description={dip.description} price={dip.price} altCaption={dipList.name}/>
+                {dipList.map((dip) => (
+                    <ProductCard key={dip.id} productid={dip.id} name={dip.name} description={dip.description} price={dip.price} altCaption={dipList.name}/>
                 ))}
             </div>
 
