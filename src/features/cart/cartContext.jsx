@@ -16,7 +16,6 @@ export function CartProvider({ children })
 
             const cartItem = prevItems[itemIndex];
 
-
             if (itemIndex === -1)
             {
                 const itemUpdated = {...item, quantity: 1};
@@ -34,7 +33,24 @@ export function CartProvider({ children })
         });
     }
 
-    const removeItem = ()=> console.log("hola removi un item");
+    const removeItem = (item) =>
+    {
+        setCartItems((prevItems) => {
+
+            const itemIndex = prevItems.findIndex((cartItem) => cartItem.productid === item.productid);
+
+            const cartItem = prevItems[itemIndex];
+
+            if (itemIndex !== -1)
+            {
+                const itemUpdated = {...cartItem, quantity: cartItem.quantity - 1};
+
+                const newCartItems = [...cartItems];
+                newCartItems[itemIndex] = itemUpdated;
+                return newCartItems;
+            }
+        });
+    }
 
 
     useEffect(() => {

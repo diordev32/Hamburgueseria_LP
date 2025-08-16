@@ -1,9 +1,21 @@
-import {useContext} from "react";
+import React, {useContext} from "react";
 import CartContext from "./cartContext.jsx";
+
 
 function Cart()
 {
-    const { cartItems } = useContext(CartContext);
+    const { cartItems, addItem, removeItem } = useContext(CartContext);
+
+
+    function clickHandler(action, item)
+    {
+        if (action === 'add') {
+            return addItem(item);
+        }
+        else if (action === 'remove') {
+            return removeItem(item);
+        }
+    }
 
     return (
         <div id="Carrito">
@@ -15,12 +27,17 @@ function Cart()
                 <ul>
                     {
                         cartItems.map((item, index) => (
-                            <li key={index}>
+                            <div key={index}>
+                            <li>
                                 <h4>{item.id}</h4>
                                 <h4>{item.name}</h4>
-                                <h4></h4>
+                                <h4>Cantidad: {item.quantity}</h4>
                                 <h5>${item.price}</h5>
                             </li>
+
+                            <button onClick={() => clickHandler("add", item)}>Agregar</button>
+                            <button onClick={() =>clickHandler("remove", item)}>Remover</button>
+                            </div>
                         ))
                     }
                 </ul>
@@ -28,8 +45,9 @@ function Cart()
 
             <h3>
 
-                ${cartItems.reduce((acc, item) => acc + item.price, 0)}
-
+            <p>
+                Su total es de: ${cartItems.reduce((acc, item) => acc + (item.price * item.quantity),0)}
+            </p>
             </h3>
 
             <div>
