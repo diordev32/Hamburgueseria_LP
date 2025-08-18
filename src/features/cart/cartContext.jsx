@@ -37,18 +37,17 @@ export function CartProvider({ children })
     {
         setCartItems((prevItems) => {
 
-            const itemIndex = prevItems.findIndex((cartItem) => cartItem.productid === item.productid);
-
-            const cartItem = prevItems[itemIndex];
-
-            if (itemIndex !== -1)
+            const updatedItems = prevItems.map((cartItem) =>
             {
-                const itemUpdated = {...cartItem, quantity: cartItem.quantity - 1};
+                if (cartItem.productid === item.productid)
+                {
+                    return {...cartItem, quantity: cartItem.quantity - 1};
+                }
+                return cartItem
+                });
 
-                const newCartItems = [...cartItems];
-                newCartItems[itemIndex] = itemUpdated;
-                return newCartItems;
-            }
+            const filteredItems = updatedItems.filter((cartItem) => cartItem.quantity > 0);
+            return filteredItems;
         });
     }
 
