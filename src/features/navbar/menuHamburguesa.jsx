@@ -1,14 +1,28 @@
 import {useState} from "react";
+import {useContext} from "react";
+import { ModalIsOpenContext } from "../../App.jsx";
 
 import menuIcon from "./menu.svg";
-import menuCloseIcon from "./close.svg";
+import menuCloseIcon from "../../assets/images/close.svg";
 
 function MenuHamburguesa({navLinks}) {
   const [isOpen, setIsOpen] = useState(false);
 
+  const {isModalOpen,setIsModalOpen} = useContext(ModalIsOpenContext);
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  const closeMenu = () => {
+    setIsOpen(false);
+  }
+
+  const handleCartClick = () =>
+  {
+    setIsModalOpen(true);
+    closeMenu();
+  }
 
   return (
     <div>
@@ -31,15 +45,27 @@ function MenuHamburguesa({navLinks}) {
         <ul className="flex flex-col items-center justify-center h-ful gap-8 ">
         {navLinks.map((link) => (
           <li key={link.path}>
-            <a  href={link.path}>{link.label}</a>
+            <a href={link.path} onClick={closeMenu}>{link.label}</a>
           </li>
         ))}
+
+        <li
+          key='carrito'
+          className="flex h-full items-center">
+          <button
+            onClick={handleCartClick}
+            className= "hover:text-gray-900 px-4 py-2 hover:bg-mustard transition-colors duration-300 rounded-lg hover:cursor-pointer"
+          >
+            Carrito
+          </button>
+        </li>
       </ul>
       </div>
 
       {isOpen && (
         <div className="fixed inset-0 bg-black opacity-70 lg:hidden z-40"/>
       )}
+
 
     </div>
   );
