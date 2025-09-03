@@ -1,119 +1,237 @@
-import {useState,useEffect} from "react";
+import { useForm } from "react-hook-form"
+import { useState } from "react";
+
 
 function CheckoutForm()
 {
 
-    const [err, setError] = useState(
+    const [view, setView] = useState("form");
+
+    const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+    } = useForm({mode:"onBlur"});
+
+    const onSubmit = data =>
         {
-            name: "",
-            phone: "",
-            payment: ""
-        }
-    );
+            console.log(data)
+            setView("summary");
+        };
 
-    function handleSumit(event)
-    {
-        event.preventDefault();
+    const shippingMethod = watch("shipping");
+    const paymentMethod = watch("payment");
 
-        console.log("Formulario enviado");
-    }
-
-    function handleNameChange(event)
-    {
-        const regexName = /^(?:[A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ]*)(?:[ '-](?:[Dd]e|[Dd]el|[Ll]a|[Ll]os|[Ll]as)){0,2}(?:[ '-](?:[A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ]*))?(?:[ '-](?:[Dd]e|[Dd]el|[Ll]a|[Ll]os|[Ll]as)){0,2}(?:[ '-](?:[A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ]*))+$/;
-
+    const regexName = /^(?:[A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ]*)(?:[ '-](?:[Dd]e|[Dd]el|[Ll]a|[Ll]os|[Ll]as)){0,2}(?:[ '-](?:[A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ]*))?(?:[ '-](?:[Dd]e|[Dd]el|[Ll]a|[Ll]os|[Ll]as)){0,2}(?:[ '-](?:[A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ]*))+$/;
         /* La expresion regular contempla lo siguiente:
         Un nombre que comienza con mayuscula seguido (opcional)de letras minúsculas
+
         Opcionalmente seguido de un espacio, apostrofo o guion y un articulo que puede comenzar con  mayuscula o minuscula como "de", "del", "la", "los" o "las"
         Opcionalmente seguido de un espacio, apostrofo o guion y un nombre que comienza con mayuscula seguido de letras minúsculas
         Opcionalmente seguido de un espacio, apostrofo o guion y un articulo que puede comenzar con  mayuscula o minuscula como "de", "del", "la", "los" o "las"
         Luego obligatoriamente seguido de un espacio, apostrofo o guion y un nombre que comienza con mayuscula seguido de letras minúsculas
         Ejemplo: "Juan de la Cruz", "Maria del Carmen", "Pedro de la Vega", "Ana de los Santos" */
 
-        if (!regexName.test(event.target.value)||(event.target.value === ""))
-        {
-            setError(prevErrors => ({...prevErrors, name: 'Nombre inválido'}));
-            event.target.style.border = "4px solid red";
-        }
-        else
-        {
-            setError(prevErrors => ({...prevErrors, name: ''}));
-            event.target.style.border = "4px solid green";
-        }
-    }
-
-    function handlePhoneChange(event)
-    {
-
     const regexPhone = /^(?:11|[2-9]\d{1,3})?(?:\d{6,8})$/;
-/*
-    La expresion regular regexPhone mira que se cumplan las siguientes condiciones:
+    const regexAdress = /^[\w\s.,'-]{5,50}$/;
+    const regexCreditCard = /^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|3[47][0-9]{13})$/
 
-    Solo debe contener dígitos (0-9).
-    *   La longitud total de la cadena debe ser de 8 a 12 caracteres.
-    *   Si la cadena representa un número con código de área, la estructura debe ser:
-        -   El código de área tiene una longitud de 2, 3 o 4 dígitos.
-        -   El primer dígito del código de área debe estar entre 2 y 9, excepto si el código de área es específicamente "11" (Capital Federal).
-        -   El resto del número (el número de abonado) debe tener una longitud de 6, 7 u 8 dígitos, de manera que la longitud total de la cadena (código de área + abonado) esté entre 8 y 12.
-*/
-
-        if (!regexPhone.test(event.target.value)||(event.target.value === ""))
-        {
-            setError(prevErrors => ({...prevErrors, phone:'Numero inválido'}));
-            event.target.style.border = "4px solid red";
-        }
-        else
-        {
-            setError(prevErrors => ({...prevErrors, phone: ''}));
-            event.target.style.border = "4px solid green";
-        }
-    }
-
-    useEffect(() =>
+    if(view === "form")
     {
-        console.log(err);
-    }
-    ,[err]);
-
-    return (
-        <div id="Compra">
+        return (
+        <div id="checkourForm">
 
             <h2>Formulario </h2>
 
-            <form onSubmit={handleSumit}>
+            <form onSubmit={handleSubmit(onSubmit)}>
+
+
                 <fieldset>
-                    <legend>Informaciónde Contacto</legend>
+                    <legend>Información de Contacto</legend>
 
-                <label htmlFor="name"> Nombre: </label>
+                <label htmlFor="name"> Nombre:
 
-                <input onBlur={handleNameChange} id="name" type="text" placeholder="Nombre Apellido" />
-                <p>
-                {err.name}
-                </p>
+                    <input
+                    id="name"
+                    type="text"
+                    placeholder="Nombre Completo"
+                    {...register("name", {
+                        required:{
+                            value:true,
+                            message:"Este campo es obligatorio",
+                        },
+                        pattern:{
+                            value:regexName,
+                            message:"El nombre es invalido",
+                        },
+                        })} />
+                    {errors.name &&
+                    <span
+                    className="text-red-600 font-bold">
+                        ❌{errors.name.message}
+                    </span>}
+                </label>
 
-                <label className="input-box">
-                    <p>Teléfono:</p>
-                    <input  onBlur={handlePhoneChange} placeholder="Ej: 011560599" type="email" />
-                    <p>
-                        {err.phone}
-                    </p>
-
+                <label htmlFor="telefono">
+                    Teléfono:
+                    <input
+                    id="telefono"
+                    placeholder="Ej: 11560599"
+                    type="tel"
+                    {...register("tel", {
+                        required:{
+                            value:true,
+                            message:"Este campo es obligatorio",
+                        },
+                        pattern:{
+                            value:regexPhone,
+                            message:"El telefono es invalido",
+                        },
+                        })} />
+                    {errors.tel &&
+                    <span
+                    className="text-red-600 font-bold">
+                        ❌{errors.tel.message}
+                    </span>}
                 </label>
 
                 </fieldset>
 
                 <fieldset>
-                    <legend>Información de Pago</legend>
+                    <legend>Información de Envío</legend>
+                    <div>
 
-                <label>
-                    <p>Método de pago:</p>
-                    <input type="text" />
-                </label>
+
+                        <label htmlFor="pickup"> Retiro en el Local
+                        <input
+                        type="radio"
+                        id="pickup"
+                        value="pickup"
+                        name="shipping"
+                        {...register("shipping", {required:true})}
+                        />
+                        </label>
+
+                        <label htmlFor="delivery"> Envío a Domicilio
+                        <input
+                        type="radio"
+                        id="delivery"
+                        value="delivery"
+                        name="shipping"
+                        {...register("shipping")}
+                        />
+                        </label>
+
+                        {errors.shipping &&
+                        <span
+                        className="text-red-600 font-bold">
+                            ❌Seleccione un método de envío
+                        </span>}
+
+                    </div>
+
+                    {shippingMethod === "delivery" && (
+
+                    <label htmlFor="address"> Dirección:
+                        <input
+                        id="address"
+                        type="text"
+                        placeholder="Calle, Número, Piso, Depto"
+                        {...register("address", {
+                            required:{
+                                value:true,
+                                message:"La dirección es obligatoria",
+                            },
+                            pattern:{
+                                value:regexAdress,
+                                message:"La dirección es invalida",
+                            },
+                            })} />
+                        {errors.address &&
+                        <span
+                        className="text-red-600 font-bold">
+                            ❌{errors.address.message}
+                        </span>}
+                    </label>
+
+                )}
+
                 </fieldset>
-                <button type="submit">Confirmar</button>
+
+                <fieldset>
+                    <legend>Método de Pago</legend>
+
+                    <label htmlFor="cash"> Efectivo
+                    <input
+                    type="radio"
+                    id="cash"
+                    value="cash"
+                    name="payment"
+                    {...register("payment", {required:true})}
+                    />
+                    </label>
+
+                    <label htmlFor="creditCard"> Tarjeta de Crédito
+                    <input
+                    type="radio"
+                    id="creditCard"
+                    value="creditCard"
+                    name="payment"
+                        {...register("payment")}
+                        />
+                        </label>
+
+                    {errors.payment &&
+                    <span
+                    className="text-red-600 font-bold">
+                        ❌Seleccione un método de pago
+                    </span>}
+
+                    {paymentMethod === "creditCard" && (
+
+                        <div>
+
+                            <label htmlFor="CardNumber"> Numero de Tarjeta:
+                                <input
+                                type="number"
+                                id="CardNumber"
+                                placeholder="4444555566667777"
+                                {...register("creditCardNumber", {
+                                    required:{
+                                        value:true,
+                                        message:"El número de tarjeta es obligatorio"},
+                                    pattern:
+                                        {value:regexCreditCard,
+                                        message:"El número de tarjeta es inválido"}
+                                })}
+                                />
+                            </label>
+                            {errors.creditCardNumber &&
+                            <span
+                            className="text-red-600 font-bold">
+                                ❌{errors.creditCardNumber.message}
+                            </span>}
+                        </div>
+                    )}
+                </fieldset>
+
+                <button type="submit">Siguiente</button>
             </form>
         </div>
     );
+    }
+    else if(view === "summary")
+    {
+        return(
+            //TODO: Hacer el componente Summary
+            //TODO: Si selecciono "tarjeta de credito" aunque despues seleccione "efectivo" se crea un campo creditCardNumber vacio en el objeto data, ver como solucionarlo (chequear useEffect y unregister?)
+            <div>
+                Resumen de la compra
+            </div>
+        )
+    }
+
 }
 
 export default CheckoutForm;

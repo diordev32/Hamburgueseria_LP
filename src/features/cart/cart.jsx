@@ -5,7 +5,6 @@ import iconAdd from "../../assets/images/iconAdd.svg";
 import iconRemove from "../../assets/images/iconRemove.svg";
 import iconClose from "../../assets/images/close.svg";
 
-//TODO: Debe devolver un solo return, usar operador ternario para renderizado condicional
 
 function Cart()
 {
@@ -22,9 +21,9 @@ function Cart()
             return addItem(item);
         }
         else if (action === 'remove') {
+        }
             return removeItem(item);
         }
-    }
 
     if (!isModalOpen)
     {
@@ -42,7 +41,7 @@ function Cart()
                 <h2
 
                 className="font-Text font-bold text-2xl p-4 text-center">
-                    Tus productos
+                    Tus productos {}
                 </h2>
 
                 <div>
@@ -87,7 +86,8 @@ function Cart()
                     </button>
 
                     <button
-                    onClick={()=>setCartItems([])}>
+                    disabled={cartItems.length === 0}
+                    onClick={()=> setCartItems([])}>
                         Vaciar
                     </button>
 
@@ -95,7 +95,7 @@ function Cart()
 
                 <button
                 className="absolute top-2 right-2"
-                onClick={() => setIsModalOpen(false)}>
+                onClick={() =>  setIsModalOpen(false)}>
                     <img src={iconClose} alt="Cerrar" />
                 </button>
             </div>

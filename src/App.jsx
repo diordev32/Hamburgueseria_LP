@@ -28,6 +28,7 @@ function App() {
             <CartProvider>
             <Menu/>
             <Cart/>
+            <CheckoutForm/>
             </CartProvider>
           </ProductListProvider>
         </Container>
