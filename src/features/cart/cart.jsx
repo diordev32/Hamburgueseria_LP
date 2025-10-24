@@ -4,7 +4,7 @@ import { ModalIsOpenContext } from "../../App.jsx";
 import iconAdd from "../../assets/images/iconAdd.svg";
 import iconRemove from "../../assets/images/iconRemove.svg";
 import iconClose from "../../assets/images/close.svg";
-
+import { Link } from "react-router";
 
 function Cart()
 {
@@ -75,19 +75,33 @@ function Cart()
                 </p>
                 </h3>
 
-                <div>
+                <div className="flex gap-9 justify-center items-center">
+
+                    {cartItems.length === 0 ? (
+                        <button
+                        disabled
+                        className="bg-red-700 text-mustard font-bold py-2 px-4 rounded-lg mb-4 opacity-50  transition-colors duration-300 cursor-not-allowed" >
+                            Confirmar
+                        </button> ):(
+
+                        <Link
+                        to="/checkout"
+                        className={` ${cartItems.length === 0 ? 'pointer-events-none opacity-50' : ''}`}>
+                            <button
+                            className={`cursor-pointer bg-red-700 text-mustard font-bold py-2 px-4 rounded-lg mb-4 hover:bg-red-400  hover:text-black transition-colors duration-300
+                            `}
+                            onClick={() => setIsModalOpen(false)}>
+                                Confirmar
+                            </button>
+                    </Link>
+
+                        )}
+
 
                     <button
-                    className="text-red font-Text font-bold"
-                    onClick={() => setView('checkout')}
                     disabled={cartItems.length === 0}
-                    >
-                        Confirmar
-                    </button>
-
-                    <button
-                    disabled={cartItems.length === 0}
-                    onClick={()=> setCartItems([])}>
+                    onClick={()=> setCartItems([])}
+                    className={`disabled:opacity-50 disabled:cursor-not-allowed disabled: hover: bg-red-700 text-mustard font-bold py-2 px-4 rounded-lg mb-4 enabled:hover:bg-red-400  enabled:hover:text-black transition-colors duration-300`}>
                         Vaciar
                     </button>
 
@@ -99,16 +113,6 @@ function Cart()
                     <img src={iconClose} alt="Cerrar" />
                 </button>
             </div>
-        );
-    }
-
-    else if (view === 'checkout')
-    {
-        modalContent =
-        (
-            <>
-            <h1>Checkout</h1>
-            </>
         );
     }
 

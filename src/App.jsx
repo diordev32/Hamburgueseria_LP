@@ -8,32 +8,52 @@ import Footer from "./features/footer/footer.jsx";
 import { ProductListProvider } from "./features/menuSection/productList.jsx";
 import {CartProvider} from "./features/cart/cartContext.jsx";
 import Container from "./features/components/container.jsx";
-import { useState,createContext } from "react";
+
+import { useState, createContext } from "react";
+import { BrowserRouter, Routes, Route } from "react-router";
 
 export const ModalIsOpenContext = createContext();
 
-function App() {
 
+function MainView() {
+  return (
+    <>
+      <NavBar/>
+      <HeroSection/>
+      <Container>
+        <Testimonials/>
+            <Menu/>
+            <Cart/>
+      </Container>
+      <Footer/>
+    </>
+  );
+};
+
+function App() {
   const [isModalOpen,setIsModalOpen] = useState(false);
 
   return (
-    <div
-    className="font-Roboto text-white bg-neutral-950">
+    <div className="font-Roboto text-white bg-neutral-950">
       <ModalIsOpenContext.Provider value={{isModalOpen,setIsModalOpen}}>
-        <NavBar/>
-        <HeroSection/>
-        <Container>
-          <Testimonials/>
-          <ProductListProvider>
-            <CartProvider>
-            <Menu/>
-            <Cart/>
-            <CheckoutForm/>
-            </CartProvider>
-          </ProductListProvider>
-        </Container>
+
+        <ProductListProvider>
+          <CartProvider>
+
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<MainView/>}/>
+
+            <Route path="/checkout" element={<CheckoutForm/>}/>
+          </Routes>
+        </BrowserRouter>
+
+          </CartProvider>
+        </ProductListProvider>
+
       </ModalIsOpenContext.Provider>
     </div>
-    )};
+  );
+};
 
 export default App;

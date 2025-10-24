@@ -1,11 +1,13 @@
 import { useForm } from "react-hook-form"
-import { useState } from "react";
-
+import { useState} from "react";
+import Summary from "./summary.jsx";
 
 function CheckoutForm()
 {
 
     const [view, setView] = useState("form");
+
+    const [data,setData] = useState({});
 
     const {
     register,
@@ -16,8 +18,10 @@ function CheckoutForm()
 
     const onSubmit = data =>
         {
-            console.log(data)
+            console.log(data);
+
             setView("summary");
+            setData(data);
         };
 
     const shippingMethod = watch("shipping");
@@ -103,11 +107,11 @@ function CheckoutForm()
                     <div>
 
 
-                        <label htmlFor="pickup"> Retiro en el Local
+                        <label htmlFor="pickup"> Retiro en Local
                         <input
                         type="radio"
                         id="pickup"
-                        value="pickup"
+                        value="Retiro en el Local"
                         name="shipping"
                         {...register("shipping", {required:true})}
                         />
@@ -117,7 +121,7 @@ function CheckoutForm()
                         <input
                         type="radio"
                         id="delivery"
-                        value="delivery"
+                        value="Envío a Domicilio"
                         name="shipping"
                         {...register("shipping")}
                         />
@@ -126,8 +130,8 @@ function CheckoutForm()
                         {errors.shipping &&
                         <span
                         className="text-red-600 font-bold">
-                            ❌Seleccione un método de envío
                         </span>}
+                            ❌Seleccione un método de envío
 
                     </div>
 
@@ -224,14 +228,9 @@ function CheckoutForm()
     else if(view === "summary")
     {
         return(
-            //TODO: Hacer el componente Summary
-            //TODO: Si selecciono "tarjeta de credito" aunque despues seleccione "efectivo" se crea un campo creditCardNumber vacio en el objeto data, ver como solucionarlo (chequear useEffect y unregister?)
-            <div>
-                Resumen de la compra
-            </div>
+            <Summary formData={data} />
         )
     }
-
 }
 
 export default CheckoutForm;

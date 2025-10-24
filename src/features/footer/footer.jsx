@@ -20,7 +20,7 @@ function Footer()
 
             <div>
 
-                <h3>Contacto</h3>
+                <h3 id="Contacto">Contacto</h3>
 
                 <p> <b>Teléfono: (03489)-123456</b></p>
                 <p> <b>Correo: elrincon@gmail.com</b>
